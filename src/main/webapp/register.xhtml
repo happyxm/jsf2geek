@@ -33,6 +33,14 @@
             <h:outputLabel for="email" value="Email:"/>
             <h:inputText id="email" value="#{registerService.account.email}"/>
             <h:message for="email"/>
+
+            <h:outputLabel for="captchaimg" value="Капча:"/>
+            <h:graphicImage id="captchaimg" value="/CaptchaImage"/>
+            <h:message for="captchaimg"/>
+
+            <h:outputLabel for="captchaval" value="Текст с картинки:"/>
+            <h:inputText id="captchaval" value="#{registerService.captchaValue}" />
+            <h:message for="captchaval"/>
         </h:panelGrid>
 
         <h:commandButton action="#{registerService.doRegister}" value="Зарегистрироваться"/>
