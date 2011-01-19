@@ -1,5 +1,6 @@
 package org.jgeek.website.service;
 
+import org.jgeek.website.captcha.validator.Captcha;
 import org.jgeek.website.model.security.UserAccount;
 import org.jgeek.website.model.security.UserAuthority;
 import org.springframework.context.annotation.Scope;
@@ -38,6 +39,9 @@ public class Register {
 //    private MailService mailService;
 
     private UserAccount account;
+
+    @Captcha
+    private String captchaValue;
 
     @PostConstruct
     private void retrieveTempAccount() {
@@ -84,5 +88,13 @@ public class Register {
 
     public void setAccount(UserAccount account) {
         this.account = account;
+    }
+
+    public String getCaptchaValue() {
+        return captchaValue;
+    }
+
+    public void setCaptchaValue(String captchaValue) {
+        this.captchaValue = captchaValue;
     }
 }
